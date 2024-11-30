@@ -2,19 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuDropdown = document.querySelector('.menu-dropdown');
     const dropdownContent = menuDropdown.querySelector('.dropdown-content');
 
-    menuDropdown.addEventListener('mouseenter', () => {
-        dropdownContent.style.display = 'block';
-        setTimeout(() => {
-            dropdownContent.classList.add('show');
-        }, 10);
-    });
+    // Обработка наведения мыши для десктопной версии
+    if (window.innerWidth > 768) {
+        menuDropdown.addEventListener('mouseenter', () => {
+            dropdownContent.style.display = 'block';
+            setTimeout(() => {
+                dropdownContent.classList.add('show');
+            }, 10);
+        });
 
-    menuDropdown.addEventListener('mouseleave', () => {
-        dropdownContent.classList.remove('show');
-        setTimeout(() => {
-            dropdownContent.style.display = 'none';
-        }, 300);
-    });
+        menuDropdown.addEventListener('mouseleave', () => {
+            dropdownContent.classList.remove('show');
+            setTimeout(() => {
+                dropdownContent.style.display = 'none';
+            }, 300);
+        });
+    }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -31,22 +34,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     menuItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                // Если это пункт с выпадающим меню
-                if (item.querySelector('.dropdown-content')) {
-                    e.preventDefault();
-                    // Закрываем все другие открытые меню
-                    menuItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-                    // Переключаем текущее меню
-                    item.classList.toggle('active');
-                }
-            }
-        });
+        const dropdownContent = item.querySelector('.dropdown-content');
+        const mainLink = item.querySelector('a');
+
+        if (dropdownContent) {
+            // Добавляем отдельный обработчик для мобильной версии
+            const toggleButton = document.createElement('button');
+            toggleButton.className = 'dropdown-toggle';
+            toggleButton.setAttribute('aria-label', 'Открыть подменю');
+            mainLink.parentNode.insertBefore(toggleButton, dropdownContent);
+
+            toggleButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Закрываем все другие открытые меню
+                menuItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Переключаем текущее меню
+                item.classList.toggle('active');
+            });
+        }
     });
 
     // Закрытие меню при клике вне его
