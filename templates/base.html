@@ -2,7 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Губернский лицей - официальный сайт образовательного учреждения">
+    <meta name="theme-color" content="#ffffff">
     <title>{% block title %}Губернский лицей{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
@@ -32,6 +34,9 @@
                 </div>
             </div>
             <nav class="main-menu">
+                <button class="menu-toggle" aria-label="Открыть меню">
+                    <span class="hamburger"></span>
+                </button>
                 <ul>
                     <li><a href="{{ url_for('index') }}">Главная</a></li>
                     <li><a href="{{ url_for('news_list') }}">Новости</a></li>

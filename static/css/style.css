@@ -2079,3 +2079,142 @@ footer {
         padding: 1rem;
     }
 }
+
+/* Mobile Optimization */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .news-item {
+        margin-bottom: 15px;
+    }
+
+    .news-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 100%;
+    }
+
+    td, th {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    /* Улучшение читаемости текста */
+    p, li {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin: 15px 0;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin: 12px 0;
+    }
+
+    /* Оптимизация изображений */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Улучшение навигации */
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    /* Оптимизация кнопок */
+    .button {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Оптимизация форм */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Оптимизация отступов */
+    .section {
+        padding: 20px 10px;
+    }
+
+    .footer {
+        padding: 15px;
+        text-align: center;
+    }
+}
+
+/* Оптимизация для очень маленьких экранов */
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p, li {
+        font-size: 14px;
+    }
+
+    .button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
