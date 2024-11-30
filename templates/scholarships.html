@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Стипендии и меры поддержки - {{ super() }}{% endblock %}
+
+{% block content %}
+<div class="container scholarships-page">
+    <div class="scholarships-sections">
+        <div class="scholarships-section">
+            <h2>Виды поддержки</h2>
+            <ul>
+                <li>Академические стипендии</li>
+                <li>Социальные стипендии</li>
+                <li>Именные стипендии</li>
+            </ul>
+        </div>
+
+        <div class="scholarships-section">
+            <h2>Критерии назначения</h2>
+            <ul>
+                <li>Высокая успеваемость</li>
+                <li>Научные достижения</li>
+                <li>Активная внеучебная деятельность</li>
+            </ul>
+        </div>
+
+        <div class="scholarships-section">
+            <h2>Дополнительная поддержка</h2>
+            <ul>
+                <li>Бесплатное питание</li>
+                <li>Психологическое консультирование</li>
+                <li>Помощь в трудоустройстве</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

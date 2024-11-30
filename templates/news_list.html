@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Новости - {{ super() }}{% endblock %}
+
+{% block content %}
+<div class="news-list">
+    <h2>Новости</h2>
+    
+    {% for news_item in news.items %}
+    <article class="news-item">
+        {% if news_item.image_url %}
+        <div class="news-image">
+            <img src="{{ url_for('static', filename=news_item.image_url) }}" alt="{{ news_item.title }}">
+        </div>
+        {% endif %}
+        <div class="news-content">
+            <h3><a href="{{ url_for('news_detail', news_id=news_item.id) }}">{{ news_item.title }}</a></h3>
+            <div class="news-meta">
+                <span class="date">{{ news_item.date_posted.strftime('%d.%m.%Y') }}</span>
+            </div>
+            <div class="news-excerpt">
+                {{ news_item.content[:200] }}...
+            </div>
+            <a href="{{ url_for('news_detail', news_id=news_item.id) }}" class="read-more">Читать далее</a>
+        </div>
+    </article>
+    {% endfor %}
+
+    {% if news.pages > 1 %}
+    <div class="pagination">
+        {% if news.has_prev %}
+        <a href="{{ url_for('news_list', page=news.prev_num) }}">&laquo; Предыдущая</a>
+        {% endif %}
+
+        {% for page_num in news.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
+            {% if page_num %}
+                {% if page_num == news.page %}
+                <span class="current-page">{{ page_num }}</span>
+                {% else %}
+                <a href="{{ url_for('news_list', page=page_num) }}">{{ page_num }}</a>
+                {% endif %}
+            {% else %}
+                <span class="ellipsis">...</span>
+            {% endif %}
+        {% endfor %}
+
+        {% if news.has_next %}
+        <a href="{{ url_for('news_list', page=news.next_num) }}">Следующая &raquo;</a>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

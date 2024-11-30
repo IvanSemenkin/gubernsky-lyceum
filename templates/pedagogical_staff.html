@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Педагогический состав - {{ super() }}{% endblock %}
+
+{% block content %}
+<div class="container pedagogical-staff">
+    <div class="staff-grid">
+        <div class="staff-section leadership">
+            <h2>Руководство</h2>
+            <div class="staff-member">
+                <div class="staff-avatar">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="staff-info">
+                    <h3>Исполняющая обязанности руководителя Центра дистанционного образования детей</h3>
+                    <p>Козина Анна Вячеславовна</p>
+                    <p>Телефон: 8(8412) 34-83-80</p>
+                    <p>E-mail: licey3cdo@mail.ru</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="staff-section deputies">
+            <h2>Заместители директора</h2>
+            <div class="staff-member">
+                <div class="staff-avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="staff-info">
+                    <h3>Заместитель директора по учебно-воспитательной работе</h3>
+                    <p>Калдина Марина Геннадьевна</p>
+                    <p>Телефон: 8(8412) 34-85-44</p>
+                    <p>E-mail: licpnz@yandex.ru</p>
+                </div>
+            </div>
+            <div class="staff-member">
+                <div class="staff-avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="staff-info">
+                    <h3>Заместитель директора по научной работе</h3>
+                    <p>Бабонкина Светлана Николаевна</p>
+                    <p>Телефон: 8(8412) 34-85-44</p>
+                    <p>E-mail: licpnz@yandex.ru</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="staff-section other-roles">
+            <h2>Дополнительные руководящие должности</h2>
+            <div class="staff-member">
+                <div class="staff-avatar">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="staff-info">
+                    <h3>Руководитель Центра выявления и поддержки одаренных детей и молодежи "Ключевский"</h3>
+                    <p>Танасов Иван Дмитриевич</p>
+                    <p>Телефон: 8(8412) 34-74-56</p>
+                    <p>E-mail: liceycenter@yandex.ru</p>
+                </div>
+            </div>
+            <div class="staff-member">
+                <div class="staff-avatar">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div class="staff-info">
+                    <h3>Старший воспитатель</h3>
+                    <p>Дятлов Виталий Сергеевич</p>
+                    <p>Телефон: 8(8412) 34-85-44</p>
+                    <p>E-mail: licpnz@yandex.ru</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

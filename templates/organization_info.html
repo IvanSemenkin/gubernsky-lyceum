@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Сведения об образовательной организации - {{ super() }}{% endblock %}
+
+{% block content %}
+<div class="container organization-info">
+    <h1 class="page-title">Сведения об образовательной организации</h1>
+    
+    <div class="info-grid">
+        <div class="info-section">
+            <h2>Основные сведения</h2>
+            <ul>
+                <li><a href="{{ url_for('main_info') }}">Основная информация</a></li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h2>Структура и управление</h2>
+            <ul>
+                <li><a href="{{ url_for('structure') }}">Структура и органы управления</a></li>
+                <li><a href="{{ url_for('pedagogical_staff') }}">Руководство и педагогический состав</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="info-additional-details">
+        <h2>Наши преимущества</h2>
+        <div class="advantages-grid">
+            <div class="advantage">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Качественное образование</h3>
+                <p>Углубленное изучение предметов, индивидуальный подход к каждому ученику</p>
+            </div>
+            <div class="advantage">
+                <i class="fas fa-flask"></i>
+                <h3>Инновационные технологии</h3>
+                <p>Современные методики обучения, использование передовых образовательных технологий</p>
+            </div>
+            <div class="advantage">
+                <i class="fas fa-users"></i>
+                <h3>Профессиональный коллектив</h3>
+                <p>Высококвалифицированные педагоги с большим опытом работы</p>
+            </div>
+            <div class="advantage">
+                <i class="fas fa-globe"></i>
+                <h3>Международное сотрудничество</h3>
+                <p>Программы обмена, международные проекты и стажировки</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

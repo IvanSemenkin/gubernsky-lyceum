@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Структура и органы управления - {{ super() }}{% endblock %}
+
+{% block content %}
+<div class="container structure-info">
+    <h1>Структура и органы управления</h1>
+    
+    <div class="info-card leadership">
+        <h2>Руководство</h2>
+        <div class="leadership-grid">
+            <div class="leadership-item">
+                <i class="fas fa-user-tie"></i>
+                <div>
+                    <h3>И.о. руководителя</h3>
+                    <p>Козина Анна Вячеславовна</p>
+                </div>
+            </div>
+            <div class="leadership-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h3>Телефон</h3>
+                    <p>8(8412) 34-83-80</p>
+                </div>
+            </div>
+            <div class="leadership-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h3>Электронная почта</h3>
+                    <p>licey3cdo@mail.ru</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card structural-units">
+        <h2>Структурные подразделения</h2>
+        <div class="units-list">
+            <div class="unit-item">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <div>
+                    <h3>Учебный отдел</h3>
+                    <p>Организация и контроль учебного процесса</p>
+                </div>
+            </div>
+            <div class="unit-item">
+                <i class="fas fa-book"></i>
+                <div>
+                    <h3>Методический отдел</h3>
+                    <p>Разработка образовательных программ и методических материалов</p>
+                </div>
+            </div>
+            <div class="unit-item">
+                <i class="fas fa-users"></i>
+                <div>
+                    <h3>Воспитательный отдел</h3>
+                    <p>Организация воспитательной работы и внеучебной деятельности</p>
+                </div>
+            </div>
+            <div class="unit-item">
+                <i class="fas fa-laptop"></i>
+                <div>
+                    <h3>Информационно-технический отдел</h3>
+                    <p>Техническое обеспечение и информационная поддержка</p>
+                </div>
+            </div>
+            <div class="unit-item">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                    <h3>Отдел безопасности</h3>
+                    <p>Обеспечение безопасности обучающихся и сотрудников</p>
+                </div>
+            </div>
+            <div class="unit-item">
+                <i class="fas fa-hands-helping"></i>
+                <div>
+                    <h3>Административно-хозяйственный отдел</h3>
+                    <p>Материально-техническое обеспечение и содержание помещений</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card location">
+        <h2>Местоположение</h2>
+        <div class="location-details">
+            <div class="location-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h3>Адрес</h3>
+                    <p>440053, г. Пенза, ул. Антонова, д. 46</p>
+                </div>
+            </div>
+            <div class="location-item">
+                <i class="fas fa-map"></i>
+                <div>
+                    <h3>Корпуса</h3>
+                    <p>Основной учебный корпус</p>
+                    <p>Административный корпус</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
