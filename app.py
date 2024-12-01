@@ -220,14 +220,15 @@ def delete_news():
 
 # Создаем все таблицы перед запуском приложения
 with app.app_context():
-    db.create_all()
-    
-    # Создаем первого пользователя, если его нет
-    if not User.query.filter_by(username='admin').first():
-        admin_user = User(username='admin')
-        admin_user.set_password('gubernsky2024')
-        db.session.add(admin_user)
-        db.session.commit()
+    # Проверяем, существует ли файл базы данных
+    if not os.path.exists('site.db'):
+        db.create_all()
+        # Создаем первого пользователя, если его нет
+        if not User.query.filter_by(username='admin').first():
+            admin_user = User(username='admin')
+            admin_user.set_password('gubernsky2024')
+            db.session.add(admin_user)
+            db.session.commit()
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 10000))
