@@ -1,0 +1,349 @@
+/* Основное меню */
+.main-menu {
+    position: relative;
+    z-index: 1100;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.main-menu > ul > li {
+    position: relative;
+}
+
+.main-menu a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.main-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Выпадающее меню */
+.menu-dropdown {
+    position: relative;
+}
+
+.menu-dropdown > a::after {
+    content: '▼';
+    font-size: 0.7em;
+    margin-left: 5px;
+    vertical-align: middle;
+    color: white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 350px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1200; /* Еще выше z-index */
+    border-radius: 12px; /* Увеличенное скругление */
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 
+        opacity 0.3s ease, 
+        transform 0.3s ease, 
+        visibility 0.3s,
+        display 0s 0.3s; /* Мгновенное исчезновение */
+}
+
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content li {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.dropdown-content li:first-child a {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.dropdown-content li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content li:last-child a {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 20px;
+    color: black;
+    transition: background-color 0.3s ease;
+    white-space: normal;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 
+        opacity 0.3s ease, 
+        transform 0.3s ease, 
+        visibility 0.3s;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .main-menu ul {
+        flex-direction: column;
+    }
+
+    .main-menu a {
+        text-align: center;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .menu-dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/* Mobile Menu Styles */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+    
+    .main-menu > ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 9999;
+        padding: 0;
+    }
+
+    .main-menu > ul.active {
+        display: block;
+    }
+
+    .main-menu > ul > li {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid #eee;
+        position: relative;
+    }
+
+    .main-menu > ul > li > a {
+        padding: 15px;
+        display: inline-block;
+        color: #333;
+        text-decoration: none;
+        font-size: 16px;
+        width: calc(100% - 50px);
+    }
+
+    .dropdown-toggle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50px;
+        height: 100%;
+        background: none;
+        border: none;
+        border-left: 1px solid #eee;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .dropdown-toggle::after {
+        content: '';
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid #333;
+        border-bottom: 2px solid #333;
+        transform: rotate(45deg);
+        margin: 0 auto;
+        transition: transform 0.3s ease;
+    }
+
+    .main-menu > ul > li.active .dropdown-toggle::after {
+        transform: rotate(-135deg);
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+        background: #f9f9f9;
+        padding: 0;
+    }
+
+    .dropdown-content a {
+        padding: 12px 15px 12px 30px;
+        color: #333;
+        border-top: 1px solid #eee;
+        display: block;
+        font-size: 14px;
+    }
+
+    .main-menu > ul > li.active .dropdown-content {
+        display: block;
+    }
+
+    .main-menu > ul > li.active > a {
+        background: #f5f5f5;
+    }
+
+    /* Убедимся, что меню всегда поверх остального контента */
+    .main-menu {
+        position: relative;
+        z-index: 9999;
+    }
+
+    /* Стили для активных состояний */
+    .main-menu > ul > li > a:hover,
+    .dropdown-content a:hover {
+        background: #f0f0f0;
+    }
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
+
+/* Active Hamburger */
+.menu-toggle.active .hamburger {
+    background: transparent;
+}
+
+.menu-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .main-menu > ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
+
+    .main-menu > ul.active {
+        display: block;
+    }
+
+    .main-menu > ul > li {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-menu > ul > li > a {
+        padding: 15px;
+        display: block;
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+    }
+
+    .main-menu > ul > li.active .dropdown-content {
+        display: block;
+    }
+}
+
+.main-content {
+    position: relative;
+    z-index: 1000; /* Контент страницы ниже меню */
+}

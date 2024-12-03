@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Вакантные места - {{ super() }}{% endblock %}
+
+{% block content %}
+<div class="container vacant-places-page">
+    <h1 class="page-title">Вакантные места для приема (перевода) обучающихся</h1>
+
+    <div class="vacant-section">
+        <h2>Условия приёма</h2>
+        <div class="conditions-block">
+            <p>Прием обучающихся в Губернский лицей осуществляется в соответствии с действующим законодательством Российской Федерации об образовании.</p>
+            <a href="{{ url_for('admission_conditions') }}" class="conditions-link">Подробные условия приема</a>
+        </div>
+    </div>
+
+    <div class="vacant-section">
+        <h2>Перечень документов для поступления</h2>
+        <div class="documents-block">
+            <p>Для поступления в Губернский лицей необходимо подготовить пакет документов.</p>
+            <a href="{{ url_for('admission_documents') }}" class="conditions-link">Перечень документов для поступления</a>
+        </div>
+    </div>
+
+    <div class="vacant-section">
+        <h2>Оплата за содержание обучающихся</h2>
+        <div class="payment-block">
+            <p>Информация об оплате за содержание обучающихся в Губернском лицее.</p>
+            <a href="{{ url_for('payment_details') }}" class="conditions-link">Оплата за содержание обучающихся в лицее</a>
+        </div>
+    </div>
+
+    <div class="vacant-section">
+        <h2>Требования к форме обучающихся</h2>
+        <div class="uniform-block">
+            <ul>
+                <li>Деловой стиль одежды</li>
+                <li>Опрятный внешний вид</li>
+                <li>Сменная обувь</li>
+                <li>Аккуратная прическа</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="vacant-section">
+        <h2>Наличие вакантных мест</h2>
+        <div class="vacancies-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Параллель</th>
+                        <th>Наличие мест</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>6 классов</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>7 классов</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>8 классов</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>9 классов</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>10 классов</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>11 классов</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="vacant-section additional-info">
+        <h2>Важная информация</h2>
+        <p>На данный момент все места в параллелях заняты. Для получения дополнительной информации о возможности зачисления, пожалуйста, свяжитесь с приемной комиссией Губернского лицея.</p>
+    </div>
+</div>
+{% endblock %}

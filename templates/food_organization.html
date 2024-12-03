@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Организация питания - {{ super() }}{% endblock %}
+
+{% block content %}
+<div class="container food-organization-page">
+    <div class="food-sections">
+        <div class="food-section">
+            <h2>Режим питания</h2>
+            <ul>
+                <li>Завтрак</li>
+                <li>Обед</li>
+                <li>Полдник</li>
+            </ul>
+        </div>
+
+        <div class="food-section">
+            <h2>Типы питания</h2>
+            <ul>
+                <li>Комплексное питание</li>
+                <li>Индивидуальное меню</li>
+                <li>Диетическое питание</li>
+            </ul>
+        </div>
+
+        <div class="food-section">
+            <h2>Качество питания</h2>
+            <ul>
+                <li>Сбалансированное меню</li>
+                <li>Свежие продукты</li>
+                <li>Соответствие нормам СанПиН</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

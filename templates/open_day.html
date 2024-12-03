@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}День открытых дверей - {{ super() }}{% endblock %}
+
+{% block content %}
+<div class="container open-day-page">
+    <h1 class="page-title">День открытых дверей</h1>
+
+    <div class="open-day-section introduction">
+        <p>Каждый год проводится день открытых дверей. Если Вы хотите познакомиться с Губернским лицеем поближе, если Ваш ребёнок желает обучаться в нашем лицее, рекомендуем обязательно побывать у нас на Дне открытых дверей!</p>
+        <p>В этот день ребята вместе с родителями смогут познакомиться со всеми направлениями деятельности лицея.</p>
+    </div>
+
+    <div class="open-day-section date-info">
+        <h2>Ближайшая дата</h2>
+        <p class="next-date">2 марта 2024 года</p>
+        <p class="registration-note">Если вы предполагаете участвовать – просим заранее зарегистрироваться по телефону: <strong>8-8412-34-85-44</strong></p>
+    </div>
+
+    <div class="open-day-section program">
+        <h2>Программа Дня открытых дверей</h2>
+        <div class="schedule">
+            <div class="schedule-item">
+                <span class="time">14:30</span>
+                <span class="description">Встреча гостей, регистрация</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">14:40 – 15:00</span>
+                <span class="description">Приветственное слово директора, презентация Губернского лицея (актовый зал)</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">15:00 – 16:40</span>
+                <span class="description">Обзорная экскурсия по Губернскому лицею</span>
+            </div>
+            <div class="schedule-item">
+                <span class="time">16:40 – 17:00</span>
+                <span class="description">Ответы администрации на вопросы (розовый зал)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="open-day-section additional-info">
+        <h2>Важная информация</h2>
+        <ul>
+            <li>Вход свободный</li>
+            <li>Рекомендуется предварительная регистрация</li>
+            <li>Будет организована экскурсия по лицею</li>
+            <li>Возможность задать вопросы администрации</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

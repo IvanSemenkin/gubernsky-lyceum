@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Основные сведения - {{ super() }}{% endblock %}
+
+{% block content %}
+<div class="container main-info">
+    <h1>Основные сведения</h1>
+    
+    <div class="info-card">
+        <h2>Контактная информация</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h3>Адрес</h3>
+                    <p>440053, г. Пенза, ул. Антонова, д. 46</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h3>Телефон</h3>
+                    <p>8 (8412) 45-10-01</p>
+                    <p>8 (8412) 45-10-02</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h3>Электронная почта</h3>
+                    <p>licpnz@mail.ru</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <i class="fas fa-globe"></i>
+                <div>
+                    <h3>Официальный сайт</h3>
+                    <p><a href="https://licpnz.ru" target="_blank">https://licpnz.ru</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h2>Реквизиты</h2>
+        <div class="info-details">
+            <p><strong>Полное наименование:</strong> Государственное автономное общеобразовательное учреждение Пензенской области "Губернский лицей"</p>
+            <p><strong>Сокращенное наименование:</strong> ГАОУ ПО "Губернский лицей"</p>
+            <p><strong>ИНН:</strong> 5835047260</p>
+            <p><strong>КПП:</strong> 583501001</p>
+            <p><strong>ОГРН:</strong> 1075835001865</p>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h2>Режим работы</h2>
+        <div class="info-details">
+            <p><strong>Понедельник - Пятница:</strong> 8:00 - 19:00</p>
+            <p><strong>Суббота:</strong> 8:00 - 14:00</p>
+            <p><strong>Воскресенье:</strong> Выходной</p>
+            <p><strong>Обед:</strong> 12:00 - 13:00</p>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h2>Проезд</h2>
+        <div class="info-details">
+            <p>Ближайшие остановки общественного транспорта:</p>
+            <ul>
+                <li>"Антонова" (автобусы: 64, 64к, 78, троллейбусы: 1, 3, 5)</li>
+                <li>"Гагарина" (автобусы: 64, 64к, 78, троллейбусы: 1, 3, 5)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

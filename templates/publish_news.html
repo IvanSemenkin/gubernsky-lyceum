@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Публикация новостей - {{ super() }}{% endblock %}
+
+{% block content %}
+<div class="publish-news-page">
+    <h2>Публикация новостей</h2>
+    <form method="POST" action="{{ url_for('publish_news') }}" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="title">Заголовок</label>
+            <input type="text" id="title" name="title" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Содержание</label>
+            <textarea id="content" name="content" class="form-control" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Изображение</label>
+            <input type="file" id="image" name="image" class="form-control">
+        </div>
+        <button type="submit" class="btn">Опубликовать</button>
+        <a href="{{ url_for('delete_news') if current_user.is_authenticated else url_for('auth.login') }}" class="btn">Удалить новости</a>
+    </form>
+</div>
+{% endblock %}
